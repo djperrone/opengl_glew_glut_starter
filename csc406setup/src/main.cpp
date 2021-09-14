@@ -22,7 +22,7 @@
 #if defined(__APPLE__)
 #include <GLUT/glut.h>
 #else
-#include <glut.h>
+#include <gl/glut.h>
 #endif
 
 #define NENDS 2           /* number of end "points" to draw */

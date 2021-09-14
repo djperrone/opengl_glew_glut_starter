@@ -13,8 +13,8 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- include directories relative to root folder (solution directory)
 
 IncludeDir = {}
-IncludeDir["glew"] = "csc406setup/vendor/glew/include/gl"
-IncludeDir["freeglut"] = "csc406setup/vendor/freeglut/include/gl"
+IncludeDir["glew"] = "csc406setup/vendor/glew/include"
+IncludeDir["freeglut"] = "csc406setup/vendor/freeglut/include"
 
 
 --include "csc406setup/vendor/glew/include"
@@ -52,14 +52,12 @@ project "csc406setup"
 	{
 		"%{prj.name}/src",					
 		"%{IncludeDir.glew}",
-		"%{IncludeDir.freeglut}",
-		
+		"%{IncludeDir.freeglut}"		
 	}
 
 	libdirs { 
                 "%{prj.name}/vendor/glew/lib",
-                "%{prj.name}/vendor/freeglut/lib",
-                
+                "%{prj.name}/vendor/freeglut/lib"                
              }
 
 	links
