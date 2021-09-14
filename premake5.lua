@@ -32,8 +32,8 @@ project "csc406setup"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")	
 
-	-- pchheader "sapch.h"
-	-- pchsource "csc406setup/src/sapch.cpp"
+	-- pchheader "mypch.h"
+	-- pchsource "csc406setup/src/mypch.cpp"
 
 	defines
 	{
