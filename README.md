@@ -7,7 +7,7 @@
 3. Open and run the visual studio solution that appears
 
 ### Renaming the  project
-1. Open the premake file then find and replace "opengl_glew_glut_starter" with whatever name you want
+1. Open the premake file then find and replace "csc406setup" with whatever name you want
 2. Run the generate projects batch file - a new folder and visual studio solution will appear.
-3. Copy contents of the "opengl_glew_glut_starter" project folder (i.e. src folder, vendor folder, dll file) and past them into the folder you just created.
-4. Delete old folders (bin, bin-int, opengl_glew_glut_starter, and the old visual studio solution)
+3. Copy contents of the "csc406setup" project folder (i.e. src folder, vendor folder, dll file) and past them into the folder you just created.
+4. Delete old folders (bin, bin-int, csc406setup, and the old visual studio solution)
