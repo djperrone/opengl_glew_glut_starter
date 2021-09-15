@@ -16,6 +16,11 @@ IncludeDir = {}
 IncludeDir["glew"] = "csc406setup/vendor/glew/include"
 IncludeDir["freeglut"] = "csc406setup/vendor/freeglut/include"
 
+
+--include "csc406setup/vendor/glew/include"
+--include "csc406setup/vendor/freeglut/include"
+
+
 project "csc406setup"
 	location "csc406setup"
 	kind "ConsoleApp"
@@ -27,11 +32,21 @@ project "csc406setup"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")	
 
+	-- pchheader "mypch.h"
+	-- pchsource "csc406setup/src/mypch.cpp"
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"	
+	}
+
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"	
+		"%{prj.name}/src/**.cpp",
+	
 	}
+	debugenvs { "PATH=%PATH%; %{prj.name}/vendor/freeglut/bin";}
 
 	includedirs
 	{
@@ -40,11 +55,10 @@ project "csc406setup"
 		"%{IncludeDir.freeglut}"		
 	}
 
-	libdirs 
-	{ 
-		"%{prj.name}/vendor/glew/lib/x64",
-		"%{prj.name}/vendor/freeglut/lib/x64"  
-	}
+	libdirs { 
+                "%{prj.name}/vendor/glew/lib/x64",
+                "%{prj.name}/vendor/freeglut/lib/x64"                
+             }
 
 	links
 	{
@@ -55,7 +69,12 @@ project "csc406setup"
 
 	filter "system:windows"
 		systemversion "latest"
-		
+
+		defines
+		{			
+			--"GLFW_INCLUDE_NONE"		
+		}
+
 	filter "configurations:Debug"			
 		runtime "Debug"
 		symbols "on"
